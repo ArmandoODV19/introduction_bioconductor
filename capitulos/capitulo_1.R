@@ -46,3 +46,16 @@ provider()
 seqinfo()
 
 
+# descargando y cargando libreria de S cerevisiae
+BiocManager::install("BSgenome.Scerevisiae.UCSC.sacCer3")
+library(BSgenome.Scerevisiae.UCSC.sacCer3)
+
+# nombrando al objeto yeast con la secuencia de S cerevisiae
+yeast <- BSgenome.Scerevisiae.UCSC.sacCer3
+# explorando informacion de secuencia
+isS4(yeast)
+.S4methods(class = "yeast")
+show(yeast)
+organism(yeast)
+provider(yeast)
+seqinfo(yeast)
