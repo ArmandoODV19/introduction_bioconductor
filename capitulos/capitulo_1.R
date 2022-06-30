@@ -59,3 +59,28 @@ show(yeast)
 organism(yeast)
 provider(yeast)
 seqinfo(yeast)
+
+# para conocer otros genomas disponibles se utiliza la funcion available.genomes()
+available.genomes()
+
+# para conocer el numero de cromosomas se utiliza la funcion lenght
+length(yeast)
+# nombres de los cromosomas
+names(yeast)
+# largo de los cromosomas en pares de bases
+seqlengths(yeast)
+
+# longitud de cromosomas individuales
+nchar(yeast$chrI)
+
+# se puede obtner secuencias especificas del genoma con la funcion getSeq
+# en este ejemplo se obtiene todo el genoma
+getSeq(yeast)
+
+# se puede especificar el cromosoma colocando el nombre del mismi
+getSeq(yeast, "chrM")
+getSeq(yeast, "chrIII")
+
+# para seleccionar locaciones especificas para extraer se
+# utilizan los argumentos start, end, width
+getSeq(yeast, start = 5)
