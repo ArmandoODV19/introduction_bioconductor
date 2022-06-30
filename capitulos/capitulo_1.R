@@ -83,4 +83,10 @@ getSeq(yeast, "chrIII")
 
 # para seleccionar locaciones especificas para extraer se
 # utilizan los argumentos start, end, width
-getSeq(yeast, start = 5)
+getSeq(yeast, "chrM", start = 5, end = 10)
+getSeq(yeast, "chrM", start = 5, width = 6)
+
+# el nombre del cromosoma es opcional, si no se coloca se regresara la informacion
+# de todos los cromosomas
+
+getSeq(yeast, start = 5, width = 6)
