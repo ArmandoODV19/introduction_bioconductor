@@ -34,3 +34,15 @@ MyEpicProject <- setClass(#define class with upper camel case
 # para obtener un resumen por objeto se utiliza la funcion show()
 show(MyDescriptor)
 
+# ver clases de un objeto
+showClass("BSgenome")
+
+# se puede obtener información del data set como organismo, proveedor e información
+# de secuencia a partir de las siguientes funciones
+# dentro del parentesis va el nombre del objeto s4 con la secuencia
+
+organism()
+provider()
+seqinfo()
+
+
