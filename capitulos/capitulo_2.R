@@ -11,6 +11,11 @@ DNA_ALPHABET
 RNA_ALPHABET
 AA_ALPHABET
 
+# la funcion alphabetFrequency() genera un conteo de las bases en la secuencia
+alphabetFrequency(dna_seq)
+# alphabet() solo muestra los carcteres presentes en la secuencia
+alphabet(dna_seq)
+
 # la funcion DNAString() permite generar un objeto con una secuencia de adn
 
 dna_seq <- DNAString("ATGATCTCGTAA")
@@ -26,3 +31,6 @@ rna_seq
 
 aa_seq <- translate(rna_seq)
 aa_seq
+
+# la funcion translate() tambien acepta secuencias de ADN
+translate(dna_seq)
