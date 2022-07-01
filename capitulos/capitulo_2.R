@@ -15,6 +15,7 @@ AA_ALPHABET
 alphabetFrequency(dna_seq)
 # alphabet() solo muestra los carcteres presentes en la secuencia
 alphabet(dna_seq)
+alphabet(dna_seq, baseOnly = TRUE) # muestra solo las bases
 
 # la funcion DNAString() permite generar un objeto con una secuencia de adn
 
@@ -34,3 +35,17 @@ aa_seq
 
 # la funcion translate() tambien acepta secuencias de ADN
 translate(dna_seq)
+
+# NOTA: para multiples secuencias se utiliza lo siguiente
+DNAStringSet()
+RNAStringSet()
+AAStringSet()
+
+# para leer un archivo de secuencia terminacion .fa se utiliza la funcion
+# readDNAStringSet()
+
+readDNAStringSet()
+
+zika <- readDNAStringSet("data/zika.fa.txt")
+length(zika)
+width(zika)
