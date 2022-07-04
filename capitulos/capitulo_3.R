@@ -76,3 +76,38 @@ genome(hg)
 hg_chrXgp <- genes(hg, filter = list(tx_chrom = c("chrX"), tx_strand = "+"))
 sort(hg_chrXgp)
 # en este ejmplo se extraen los genes del cromosoma x en la cadena positiva
+
+# las listas pueden lmacenar GRangers de forma mas eficiente
+# para crear una lista se utiliza la funcion as(), usando como argumentos
+# el objeto y "GRangesList"
+as(mylist, "GRangesList")
+# tambien se puede hacer esto con la funcion GRangersList()
+GRangesList(myGRanges1, myGRangers2, ...)
+
+# para deshacer la lista se utiliza la funcion unlist()
+
+
+# las ventanas dividen un GRanges en subelemntos
+# width es el numero de bases por seccion y step el numero de bases de separacion
+# entre cada seccion
+slidingWindows(hg_chrXg, width = 20000, step = 10000)
+
+
+# las funciones transcripst() y exons() permiten extraer los transcritos y exones
+# de una secuencia
+
+transcripts(hg, columns = c("tx_id", "tx_name", filter =NULL))
+exons(hg, columns = c("tx_id", "exon_id"))
+
+# obtener los exones por transcrito utilizando la funcion exonsBy()
+
+seqlevels(hg) <- c("chrX")
+exonsBytx <- exonsBy(hg, by = "tx")
+
+# selecionar transcrito por id
+
+abcd1_179161 <- exonsBytx[["179161"]]
+
+# contar transcritos por gen
+transcriptsBy(x, by = "gene")
+extx <- transcripts(hg, by = "gene")
