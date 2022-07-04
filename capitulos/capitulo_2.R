@@ -79,10 +79,16 @@ reverse(zikaVirus_seq)
 # patrones en las secuencias utiliza los argugentos pattern para buscar una serie de bases
 # y subject, la cual es la secuencia más lasrga matchPattern(pattern, subject)
 matchPattern()
+matchPattern(pattern = "AGTT", subject = zikaVirus_seq)
 
 
 # vmatchPattern se utiliza para buscar multiples secuencias. por ejemplo cuando se utiliza
 # stringSet, los argumentos son pattern para la secuencia patron y subject para la serie
 # de secuencias vmatchPattern(pattern, subject)
 vmatchPattern()
+vmatchPattern(pattern = "AGTT", subject = zikaSet)
 
+
+# para buscar palindromes en la secuencia se utiliza la funcion findPalindromes()
+findPalindromes()
+findPalindromes(zikaVirus_seq)
