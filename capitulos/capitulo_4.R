@@ -10,4 +10,16 @@ BiocManager::install("ShortRead")
 
 library(ShortRead)
 
-fasample <- readFasta(dir = "data/zika.fa", pattern = "fasta")
+fasample <- readFasta(dir = "data/zikaVirus_seq.fasta", pattern = "fasta")
+
+# para escribir un objeto en formato fasta se utiliza la funcion writeFasta()
+
+writeFasta(zika, file = "data/zikaVirus_seq.fasta")
+
+# para leer archivos fastq se utiliza la funcion readfastq()
+readFastq() # se utiliza iguañ que readFasta()
+
+# para escribir un archivo fastq se utiliza la funcion writeFastq()
+writeFastq(fastq, file="data/sample.fastq.gz") # se debe guardar en terminacion .gz
+
+
