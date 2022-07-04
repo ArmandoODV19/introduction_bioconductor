@@ -42,3 +42,23 @@ mydf <- data.frame(seqnames, start, end, strand, GC)
 
 myGR <- as(mydf, "GRanges")
 myGR
+
+# explotando GRanges
+seqnames(myGR) # secuencia
+ranges(myGR) #IRanges de la secuencia
+mcols(myGR)
+seqinfo(myGR) # informacion de la secuencia
+genome(myGR) # nombre del genoma
+
+# cargando genoma de referencia humano hg38
+BiocManager::install("TxDb.Hsapiens.UCSC.hg38.knownGene")
+# cargando la libreria
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+hg <- TxDb.Hsapiens.UCSC.hg38.knownGene
+
+# para seleccionar cromosomas de interes se utiliza la funcion genes()
+genes()
+# seleccionando cromosoma X
+hg_chrXg <- genes(hg, filter = list(tx_chrom = c("chrX")))
+hg_chrXg
