@@ -60,5 +60,19 @@ hg <- TxDb.Hsapiens.UCSC.hg38.knownGene
 # para seleccionar cromosomas de interes se utiliza la funcion genes()
 genes()
 # seleccionando cromosoma X
+# para extraer un cromosoma se usa el argumento filter y list()
+# tx_chrom extae el id del gen, pero exxisten otros argumentos
+# "gene_id", "tx_id", "tx_name", "tx_chrom", "tx_strand",
+# "exon_id", "exon_name", "exon_chrom", "exon_strand",
+# "cds_id", "cds_name", "cds_chrom", "cds_strand", and "exon_rank"
 hg_chrXg <- genes(hg, filter = list(tx_chrom = c("chrX")))
 hg_chrXg
+
+seqinfo(hg)
+genome(hg)
+
+# es posible usar mas de un argumento a la vez
+
+hg_chrXgp <- genes(hg, filter = list(tx_chrom = c("chrX"), tx_strand = "+"))
+sort(hg_chrXgp)
+# en este ejmplo se extraen los genes del cromosoma x en la cadena positiva
