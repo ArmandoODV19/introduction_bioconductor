@@ -73,3 +73,16 @@ rev(zikaSet)
 
 zikaVirus_seq
 reverse(zikaVirus_seq)
+
+
+# la paqueteria Biostrings contiene la función matchPattern() que permite identificar
+# patrones en las secuencias utiliza los argugentos pattern para buscar una serie de bases
+# y subject, la cual es la secuencia más lasrga matchPattern(pattern, subject)
+matchPattern()
+
+
+# vmatchPattern se utiliza para buscar multiples secuencias. por ejemplo cuando se utiliza
+# stringSet, los argumentos son pattern para la secuencia patron y subject para la serie
+# de secuencias vmatchPattern(pattern, subject)
+vmatchPattern()
+
