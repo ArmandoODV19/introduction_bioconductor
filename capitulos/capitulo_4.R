@@ -67,3 +67,9 @@ cleanReads <- myReads[srduplicated(myReads) == FALSE]
 polynFilter()
 myFilterpolyA <- polynFilter(threshold = 10, nuc = c("A"))
 
+
+# la paqueteria Rqc es una herramienta de control de calidad para secuenciacion
+# masiva de alta calidad
+
+BiocManager::install("Rqc")
+library(Rqc)
