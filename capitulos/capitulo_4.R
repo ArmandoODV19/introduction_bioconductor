@@ -23,3 +23,20 @@ readFastq() # se utiliza iguañ que readFasta()
 writeFastq(fastq, file="data/sample.fastq.gz") # se debe guardar en terminacion .gz
 
 
+
+# la funcion quality() se utiliza para conocer la calidad de la secuencia
+quality()
+# antes de cada analisis se debe evaluar la calidad
+
+# la funcion PhredQuality() genera el puntaje de calidad de forma numerica
+# para que sea mas facil de visualizar
+# se utiliza en conjunto a quality() y dentro de quality() se coloca el objeto fastq
+PhredQuality()
+PhredQuality(quality(fqsample))
+
+# se puede hacer una lista
+pq <- PhredQuality(quality(fqsample))
+qs <- as(pq, "IntegerList")
+
+# qa() genera un resumen de la descripcion de calidad del objeto fastq
+qa()
