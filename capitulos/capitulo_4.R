@@ -47,3 +47,16 @@ qa()
 browseURL()
 browseURL(report())
 
+
+# checar duplicados
+# para saber si tu dataset tiene duplicados se utilizan las funciones table() y
+# srduplicated()
+table(srduplicated(dfqsample))
+# cuenta los duplicados como TRUE, y los unicos como FALSE
+
+
+# una manera de eliminar los duplicados es filtrar aquellos que no estan duplicados
+# o aquellos que son FALSE
+
+cleanReads <- myReads[srduplicated(myReads) == FALSE]
+
