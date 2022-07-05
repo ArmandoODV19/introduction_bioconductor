@@ -45,3 +45,5 @@ qa()
 # browseURL(report()) se utiliza para obtener graficos y tablas de calidad en el servidor
 # dentro de report() se coloca el resultado de qa()
 browseURL()
+browseURL(report())
+
