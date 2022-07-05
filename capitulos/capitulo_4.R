@@ -68,8 +68,25 @@ polynFilter()
 myFilterpolyA <- polynFilter(threshold = 10, nuc = c("A"))
 
 
-# la paqueteria Rqc es una herramienta de control de calidad para secuenciacion
+# la paqueteria Rqc es una herramienta que genra un
+# resumen de la informacion de control de calidad para secuenciacion
 # masiva de alta calidad
 
 BiocManager::install("Rqc")
 library(Rqc)
+
+# la funcion rqcQA() de la paqueteria Rqc permite hacer este analisis de calidad
+rqcQA()
+qaRqc <- rqcQA(files)
+# el argumento workers permite definir el numero de nucleos que se utilizaran para
+# hacer el analisis
+qaRqc <- rqcQA(files, workers = 4)
+
+# para hacer un reporte de calidad se utiliza la funcion
+rqcReport()
+# como argumentos se coloca el objeto y el nombre que se le dará al archivo
+
+reportfile <- rqcReport(qaRqc, templateFile = "myReport.Rmd")
+# despues se utiliza browseURL() para ver el reporte en el navegador
+browseURL(reportfile)
+
