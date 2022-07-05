@@ -10,7 +10,7 @@ BiocManager::install("ShortRead")
 
 library(ShortRead)
 
-fasample <- readFasta(dir = "data/zikaVirus_seq.fasta", pattern = "fasta")
+fasample <- readFasta(dir = "data", pattern = "zikaVirus_seq.fasta")
 
 # para escribir un objeto en formato fasta se utiliza la funcion writeFasta()
 
@@ -26,6 +26,7 @@ writeFastq(fastq, file="data/sample.fastq.gz") # se debe guardar en terminacion 
 
 # la funcion quality() se utiliza para conocer la calidad de la secuencia
 quality()
+encoding(quality())
 # antes de cada analisis se debe evaluar la calidad
 
 # la funcion PhredQuality() genera el puntaje de calidad de forma numerica
@@ -40,3 +41,7 @@ qs <- as(pq, "IntegerList")
 
 # qa() genera un resumen de la descripcion de calidad del objeto fastq
 qa()
+
+# browseURL(report()) se utiliza para obtener graficos y tablas de calidad en el servidor
+# dentro de report() se coloca el resultado de qa()
+browseURL()
