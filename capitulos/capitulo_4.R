@@ -60,3 +60,10 @@ table(srduplicated(dfqsample))
 
 cleanReads <- myReads[srduplicated(myReads) == FALSE]
 
+# la funcion polynFilter() permite filtrar a partir de un nucleotido o paramtero
+# especifico
+# en el siguiente ejemplo nos quedaremos con las secuencias con almenos 10
+# Adeninas "A"
+polynFilter()
+myFilterpolyA <- polynFilter(threshold = 10, nuc = c("A"))
+
